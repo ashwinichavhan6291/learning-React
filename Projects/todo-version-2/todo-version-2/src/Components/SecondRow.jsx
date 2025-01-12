@@ -1,6 +1,5 @@
-function ThirdRow() {
-  let todoName = "Go to College";
-  let date = "4/10/2025";
+function SecondRow({todoName,date}) {
+  
   return (
     <div className="container text-center">
       <div className="row">
@@ -15,4 +14,4 @@ function ThirdRow() {
     </div>
   );
 }
-export default ThirdRow;
+export default SecondRow;
