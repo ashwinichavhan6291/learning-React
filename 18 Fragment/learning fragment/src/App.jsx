@@ -4,13 +4,20 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import ErrorMessage from "./Components/ErrorMessage";
 import Container from "./Components/Container";
 import FoodInput from "./Components/FoodInput";
+import { useState } from "react";
 FoodInput;
 function App() {
   // let fooditems=[];
   let fooditems = ["Dal", "Rice", "Green veggy", "Milk", "Roti"];
+  
+  let[textToShow,setTextState]=useState("food item is selected");
+  //  console.log(`current val of textToShow:${textToShow}`);
+
   const handledOnChange=(event)=>{
-         console.log(event.target.value)
+         console.log(event.target.value);
+         setTextState(event.target.value);
      }
+   
   return (
     <>
     <Container>
@@ -18,6 +25,7 @@ function App() {
       <ErrorMessage food={fooditems}></ErrorMessage>
 
       <FoodInput handledOnChange={handledOnChange}></FoodInput>
+      <p>{textToShow}</p>
       <Fooditems food={fooditems}></Fooditems>
     </Container>
 
