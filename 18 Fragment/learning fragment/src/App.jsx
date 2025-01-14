@@ -8,14 +8,16 @@ FoodInput;
 function App() {
   // let fooditems=[];
   let fooditems = ["Dal", "Rice", "Green veggy", "Milk", "Roti"];
-
+  const handledOnChange=(event)=>{
+         console.log(event.target.value)
+     }
   return (
     <>
     <Container>
       <h1 className="food-heading">Healthy Food</h1>
       <ErrorMessage food={fooditems}></ErrorMessage>
 
-      <FoodInput></FoodInput>
+      <FoodInput handledOnChange={handledOnChange}></FoodInput>
       <Fooditems food={fooditems}></Fooditems>
     </Container>
 
