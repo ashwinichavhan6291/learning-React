@@ -8,14 +8,20 @@ import { useState } from "react";
 FoodInput;
 function App() {
   // let fooditems=[];
-  let fooditems = ["Dal", "Rice", "Green veggy", "Milk", "Roti"];
+  // let fooditems = ["Dal", "Rice", "Green veggy", "Milk", "Roti"];
   
-  let[textToShow,setTextState]=useState("food item is selected");
-  //  console.log(`current val of textToShow:${textToShow}`);
-
-  const handledOnChange=(event)=>{
-         console.log(event.target.value);
-         setTextState(event.target.value);
+  
+  let[fooditems,setfoodItems]=useState([
+    
+  ]);
+  
+  const onKeyDown=(event)=>{
+    if(event.key=="Enter"){
+      let newFoodItems=event.target.value;
+      let newItems=[...fooditems,newFoodItems];
+      setfoodItems(newItems);
+    }
+         
      }
    
   return (
@@ -24,8 +30,8 @@ function App() {
       <h1 className="food-heading">Healthy Food</h1>
       <ErrorMessage food={fooditems}></ErrorMessage>
 
-      <FoodInput handledOnChange={handledOnChange}></FoodInput>
-      <p>{textToShow}</p>
+      <FoodInput handledKeyDown={onKeyDown}></FoodInput>
+      
       <Fooditems food={fooditems}></Fooditems>
     </Container>
 
