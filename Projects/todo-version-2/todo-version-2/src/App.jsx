@@ -1,30 +1,35 @@
 import AppName from "./Components/AppName";
 import FirstRow from "./Components/FirstRow";
-
+import WelcomeMessage from "./Components/WelcomeMessage";
 import Items from "./Components/items";
-
+import { useState } from "react";
 import "./App.css";
 
 function App() {
-  const todoitems=[{
-    name:"Buy Milk",
-    date :"4/10/2024",
-  },
-  {
-    name:"Go to college",
-    date :"4/10/2024",
-  },
-  {
-    name:"Namkeen",
-    date :"4/10/2024",
-  }
+  
+let[todoitems,setTodoItem]=useState([]);
 
-]
+
+const HandledNewItem=(newItem,Date)=>{
+// console.log(`${newItem} is added on ${Date}`);
+const newName= [...todoitems, { name: newItem, date: Date }];
+setTodoItem(newName);
+}
+let onDeleteClick = (todoitemName) => {
+  const newTodoItem = todoitems.filter((item) => item.name !== todoitemName);
+  setTodoItem(newTodoItem);
+};
+
+
+
+
   return (
     <div className="todo-container" style={{ textAlign: "center" }}>
       <AppName />
-      <FirstRow />
-      <Items items={todoitems}></Items>
+     
+      <FirstRow onNewItem={HandledNewItem}></FirstRow>
+      {todoitems.length==0 && <WelcomeMessage></WelcomeMessage>}
+      <Items items={todoitems} onHandledClick={onDeleteClick}></Items>
     </div>
   );
 }

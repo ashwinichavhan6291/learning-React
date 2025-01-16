@@ -1,5 +1,8 @@
-todo-container {
-  border: 2px solid black;
+.todo-container {
+  margin: 200px;
+  box-sizing: border-box;
+  flex-wrap:wrap;
+  border: 6px solid black;
 }
 h1 {
   font-size: larger;
