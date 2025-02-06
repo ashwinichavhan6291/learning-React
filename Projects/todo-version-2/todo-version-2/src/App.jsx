@@ -20,10 +20,7 @@ let onDeleteClick = (todoitemName) => {
   setTodoItem(newTodoItem);
 };
 
-
-
-
-  return (
+return (
     <div className="todo-container" style={{ textAlign: "center" }}>
       <AppName />
      

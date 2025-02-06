@@ -3,7 +3,9 @@ const Items=({items,onHandledClick})=>{
 return(
     <div className="items-container">
         {items.map(item=> 
-            <SecondRow todoName={item.name} date={item.date} onDeleteClick={onHandledClick}></SecondRow >
+            <SecondRow 
+            key={item.name}todoName={item.name} 
+            date={item.date} onDeleteClick={onHandledClick}></SecondRow >
         )}
     
   
