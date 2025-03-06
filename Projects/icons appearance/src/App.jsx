@@ -15,7 +15,7 @@ function App() {
         <div className="h-screen w-64 bg-gray-900 text-white p-4 ">
           <div
             className="ml-auto w-4 cursor-pointer"
-            onClick={() => setSidebar(!Sidebar)}
+            onClick={() => setSidebar(true)}
           >
             <IoCloseSharp className="w-10 h-6 pr-3" />
           </div>
