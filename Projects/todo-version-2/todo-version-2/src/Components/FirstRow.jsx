@@ -22,13 +22,13 @@ let handledAddButtonClick=()=>{
 }
 
   return (
-    <div className="col-6">
+    <div className="col-6 " style={{display:"flex",}}>
     <div className="row">
       
-        <input type="text" placeholder="Enter in Todo App" value={todoName} onChange={handledNameChange} />
+        <input type="text" style={{marginLeft:"20px"}} placeholder="Enter in Todo App" value={todoName} onChange={handledNameChange} />
       </div>
       <div className="col-4">
-        <input type="date"  value={dueDate} onChange={handledDateChange}/>
+        <input type="date"  value={dueDate} style={{marginLeft:"40px", marginTop:"10px"}}onChange={handledDateChange}/>
       </div>
       <div className="col-2">
        
